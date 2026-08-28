@@ -1,6 +1,9 @@
 resource "aws_key_pair" "my_key" {
-  key_name   = "ec2-key"
+  key_name   = "${var.env}-ec2-key"
   public_key = file("ec2-key.pub")
+  tags = {
+    Environment = var.env
+  }
 }
 
 resource "aws_default_vpc" "default" {
