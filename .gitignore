@@ -1,0 +1,16 @@
+# Terraform directories
+**/.terraform/*
+
+# State files
+*.tfstate
+*.tfstate.*
+
+# Lock files
+.terraform.lock.hcl
+
+# Keys
+*.pem
+*.ppk
+*.key
+
+provider.tf
