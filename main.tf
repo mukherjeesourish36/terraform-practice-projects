@@ -2,12 +2,9 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "example" {
-  ami = var.ami_value
-  instance_type = var.instance_type_value
-#   subnet_id = var.subnet_id_value
- tags = {
-   Name = "demo_ec2"
-   
- }
+module "ec2_instance" {
+  source = "./module/ec2_instance"
+  ami_value = "ami-081b0a6eac00b4f53"
+  instance_type_value = "t3.micro"
+
 }
